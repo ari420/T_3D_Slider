@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3d slider</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: linear-gradient(black 50%, gray);
+      }
+      .main {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          position: absolute;
+        }
+        > .flex { 
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          margin-top: 300px;
+          position: absolute;
+          transform: perspective(700px) rotateX(-20deg);
+          left: 0;
+          top: 0;
+          > .slider {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: slider 10s linear infinite alternate;
+            > div {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              overflow: hidden;
+              border-radius: 10px;
+              >img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+              &:nth-of-type(1) {
+                transform: rotateY(-18deg) translateZ(-500px);
+              }
+              &:nth-of-type(2) {
+                transform: rotateY(18deg) translateZ(-500px);
+              }
+              &:nth-of-type(3) {
+                transform: rotateY(-55deg) translateZ(-500px);
+              }
+              &:nth-of-type(4) {
+                transform: rotateY(55deg) translateZ(-500px);
+              }
+              &:nth-of-type(5) {
+                transform: rotateY(-90deg) translateZ(-500px);
+              }
+              &:nth-of-type(6) {
+                transform: rotateY(-18deg) translateZ(500px);
+              }
+              &:nth-of-type(7) {
+                transform: rotateY(18deg) translateZ(500px);
+              }
+              &:nth-of-type(8) {
+                transform: rotateY(-55deg) translateZ(500px);
+              }
+              &:nth-of-type(9) {
+                transform: rotateY(55deg) translateZ(500px);
+              }
+              &:nth-of-type(10) {
+                transform: rotateY(90deg) translateZ(-500px);
+              }
+            }
+          }
+        }
+      }
+      @keyframes slider{
+        to{
+            transform: rotateY(360deg) rotateX(-10deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main">
+      <img src="images/back_img2.jpg" alt="" />
+      <div class="flex">
+        <div class="slider">
+          <div>
+            <img src="images/img1.avif" alt="">
+          </div>
+          <div>
+            <img src="images/img2.webp" alt="">
+          </div>
+          <div>
+            <img src="images/img3.jpg" alt="">
+          </div>
+          <div>
+            <img src="images/img4.webp" alt="">
+          </div>
+          <div>
+            <img src="images/img5.webp" alt="">
+          </div>
+          <div>
+            <img src="images/img6.jpeg" alt="">
+          </div>
+          <div>
+            <img src="images/img7.jpg" alt="">
+          </div>
+          <div>
+            <img src="images/img8.jpg" alt="">
+          </div>
+          <div>
+            <img src="images/img9.jpg" alt="">
+          </div>
+          <div>
+            <img src="images/img10.jpeg" alt="">
+          </div>
+      </div>
+    </section>
+  </body>
+</html>
